@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ffmpeg -y -loglevel error -i %02d.jpg -vf \"scale=200:200,tile=7x4\" -frames:v 1 sheet.png)",
+      "Bash(ffmpeg -y -loglevel error -i c%02d.jpg -vf \"scale=200:200,tile=7x3\" -frames:v 1 sheet2.png)",
+      "Bash(npm run *)",
+      "Bash(npm ls *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\\\\\(x86\\\\\\)/Microsoft/Edge/Application/**)",
+      "Bash(mkdir -p .shots)",
+      "Bash(\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1440,900 --virtual-time-budget=14000 --screenshot=\".shots/desktop.png\" \"http://localhost:4173/\")",
+      "Bash(\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1440,2600 --virtual-time-budget=16000 --screenshot=\"C:\\\\MY SYSTEM\\\\Work\\\\Test claude\\\\.shots\\\\desktop.png\" \"http://localhost:4173/\")",
+      "Bash(rm -f fin*.jpg)",
+      "Bash(curl -s --max-time 25 -o fin1.jpg \"https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=560&h=700&fit=crop&crop=faces&q=75\")",
+      "Bash(curl -s --max-time 25 -o fin2.jpg \"https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=560&h=700&fit=crop&crop=faces&q=75\")",
+      "Bash(curl -s --max-time 25 -o fin3.jpg \"https://images.unsplash.com/photo-1580281658626-ee379f3cce93?w=560&h=700&fit=crop&crop=faces&q=75\")",
+      "Bash(curl -s --max-time 25 -o fin4.jpg \"https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=560&h=700&fit=crop&crop=faces&q=75\")",
+      "Bash(awk '{print $5,$9}')",
+      "Bash(ffmpeg -y -loglevel error -i fin%d.jpg -vf \"scale=400:500,tile=4x1\" -frames:v 1 finals.png)",
+      "Bash(\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1440,4600 --virtual-time-budget=32000 --screenshot=\"C:\\\\MY SYSTEM\\\\Work\\\\Test claude\\\\.shots\\\\full2.png\" \"http://localhost:4176/\")",
+      "Bash(ffmpeg -y -loglevel error -i .shots/full2.png -vf \"crop=720:420:720:1080\" .shots/play.png)",
+      "Bash(ffmpeg -y -loglevel error -i .shots/play.png -vf \"scale=1440:840:flags=neighbor\" .shots/play2x.png)",
+      "Bash(\"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=390,2400 --virtual-time-budget=30000 --screenshot=\"C:\\\\MY SYSTEM\\\\Work\\\\Test claude\\\\.shots\\\\m.png\" \"http://localhost:4177/\")",
+      "Bash(node scripts/shot.mjs \"http://localhost:4177/\" \".shots/mobile.png\" 390 900 --mobile)",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "Bash(curl -sS -L -o hero.jpg \"https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=800&q=80&fm=jpg&fit=crop&crop=faces,entropy&ar=4:5\")",
+      "Bash(curl -sS --ssl-no-revoke -o hero.jpg \"https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=800&q=80&fm=jpg&fit=crop&crop=faces,entropy&ar=4:5\")",
+      "Bash(curl -sS --ssl-no-revoke -o dr1_cardio.jpg \"https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=700&q=80&fm=jpg&fit=crop&crop=faces,entropy&ar=1:1\")",
+      "Bash(curl -sS --ssl-no-revoke -o dr2_neuro.jpg \"https://images.unsplash.com/photo-1622902046580-2b47f47f5471?w=700&q=80&fm=jpg&fit=crop&crop=faces,entropy&ar=1:1\")",
+      "Bash(curl -sS --ssl-no-revoke -o dr3_ortho.jpg \"https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=700&q=80&fm=jpg&fit=crop&crop=faces,entropy&ar=1:1\")",
+      "Bash(curl -sS --ssl-no-revoke -o dr4_obgyn.jpg \"https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&q=80&fm=jpg&fit=crop&crop=faces,entropy&ar=1:1\")"
+    ]
+  }
+}
